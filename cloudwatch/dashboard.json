@@ -1,0 +1,61 @@
+{
+  "widgets": [
+    {
+      "type": "metric",
+      "x": 0, "y": 0, "width": 24, "height": 8,
+      "properties": {
+        "title": "Uso de CPU, memória e disco (%)",
+        "view": "timeSeries",
+        "region": "us-east-1",
+        "stat": "Average",
+        "period": 60,
+        "metrics": [
+          [ { "expression": "SEARCH('{ExemploS3Metrics,Host}', 'Average', 60)", "id": "e1", "label": "${PROP('MetricName')} - ${PROP('Dim.Host')}" } ]
+        ],
+        "yAxis": { "left": { "min": 0, "max": 100, "label": "%", "showUnits": false } }
+      }
+    },
+    {
+      "type": "metric",
+      "x": 0, "y": 8, "width": 8, "height": 4,
+      "properties": {
+        "title": "CPU (%)",
+        "view": "singleValue",
+        "region": "us-east-1",
+        "stat": "Average",
+        "period": 60,
+        "metrics": [
+          [ { "expression": "SEARCH('{ExemploS3Metrics,Host} MetricName=\"CPUUsage\"', 'Average', 60)", "id": "cpu", "label": "${PROP('Dim.Host')}" } ]
+        ]
+      }
+    },
+    {
+      "type": "metric",
+      "x": 8, "y": 8, "width": 8, "height": 4,
+      "properties": {
+        "title": "Memória (%)",
+        "view": "singleValue",
+        "region": "us-east-1",
+        "stat": "Average",
+        "period": 60,
+        "metrics": [
+          [ { "expression": "SEARCH('{ExemploS3Metrics,Host} MetricName=\"MemoryUsage\"', 'Average', 60)", "id": "mem", "label": "${PROP('Dim.Host')}" } ]
+        ]
+      }
+    },
+    {
+      "type": "metric",
+      "x": 16, "y": 8, "width": 8, "height": 4,
+      "properties": {
+        "title": "Disco (%)",
+        "view": "singleValue",
+        "region": "us-east-1",
+        "stat": "Average",
+        "period": 60,
+        "metrics": [
+          [ { "expression": "SEARCH('{ExemploS3Metrics,Host} MetricName=\"DiskUsage\"', 'Average', 60)", "id": "disk", "label": "${PROP('Dim.Host')}" } ]
+        ]
+      }
+    }
+  ]
+}

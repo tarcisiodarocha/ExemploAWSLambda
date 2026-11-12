@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-11-12T23:05:29.482533556Z",
+  "hostname": "teste-manual",
+  "cpu": {
+    "usagePercent": 42.5
+  },
+  "memory": {
+    "total": 16867414016,
+    "used": 8433707008,
+    "usagePercent": 50.0
+  },
+  "disk": {
+    "mountPoint": "/",
+    "total": 270553174016,
+    "used": 135276587008,
+    "usagePercent": 50.0
+  }
+}
